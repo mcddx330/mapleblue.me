@@ -29,7 +29,7 @@
                 $prepath = '/assets/images/works';
                 $image_path = isset($disco['disc_number']) ? sprintf('%s/disc/%s.webp', $prepath, $disco['disc_number']) : null;
               @endphp
-              <div class="album" style="margin-right: 10px;">
+              <div class="album">
                 <a class="album-trigger" data-chunk-id="album-detail-{{ $chunk_id }}" data-details="details-{{ $i }}">
                   <span class="artwork-cover"
                         style="background-image: url('{{ $image_path }}');"

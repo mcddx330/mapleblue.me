@@ -1,3 +1,7 @@
+$width-pc: 1280px;
+$width-sp: 800px;
+$album-row-count: 3;
+
 body {
   font-family: "M PLUS 1p", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴ ProN", "Noto Sans Japanese", "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
@@ -18,15 +22,15 @@ header {
   z-index: 1000;
 
   .header-inner {
-    max-width: 1280px;
+    max-width: $width-pc;
     height: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 calc($album-row-count * 10)px;
 
-    @media (max-width: 640px) {
+    @media (max-width: $width-sp) {
       flex-direction: column;
       justify-content: center;
       text-align: center;
@@ -50,7 +54,7 @@ header {
     font-weight: bold;
     text-align: left;
 
-    @media (max-width: 640px) {
+    @media (max-width: $width-sp) {
       text-align: center;
     }
   }
@@ -64,7 +68,7 @@ header {
       gap: 20px;
       justify-content: flex-end;
 
-      @media (max-width: 640px) {
+      @media (max-width: $width-sp) {
         justify-content: center;
         flex-wrap: wrap;
       }
@@ -90,11 +94,11 @@ footer {
 }
 
 main {
-  max-width: 1280px;
+  max-width: $width-pc;
   margin: 0 auto 0;
   padding: 20px;
 
-  @media (max-width: 640px) {
+  @media (max-width: $width-sp) {
     text-align: center;
   }
 
@@ -113,7 +117,7 @@ main {
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: $width-sp) {
       text-align: center;
       margin-top: 20px;
     }
@@ -127,17 +131,17 @@ main {
   .album-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5em;
     position: relative;
 
     .album-row {
       width: 100%;
       display: flex;
       justify-content: flex-start;
-      gap: 20px;
+      gap: calc($album-row-count * 10px);
       margin-bottom: 20px;
 
-      @media (max-width: 640px) {
+      @media (max-width: $width-sp) {
         flex-direction: column;
       }
     }
@@ -159,7 +163,8 @@ main {
       .artwork-cover {
         display: block;
         height: 0;
-        max-width: 400px;
+        min-width: $width-sp / 4;
+        max-width: $width-sp;
         padding-top: 100%;
         border-radius: 8px;
         background-size: cover;
@@ -178,7 +183,7 @@ main {
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: $width-sp) {
       /* 1列 */
       .album {
         flex: 1 1 100%;
@@ -278,10 +283,10 @@ main {
         justify-content: space-between;
         align-items: center; 
         width: 100%; 
-        gap: 20px; 
+        gap: calc($album-row-count * 10)px;
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: $width-sp) {
         .album-detail {
           flex-direction: column; 
           align-items: center;
@@ -359,7 +364,7 @@ main {
       box-shadow: 0 0 15px #333333;
       object-fit: cover;
 
-      @media (max-width: 640px) {
+      @media (max-width: $width-sp) {
         margin-bottom: 20px;
       }
     }
@@ -372,7 +377,7 @@ main {
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width: 640px) {
+        @media (max-width: $width-sp) {
           flex-direction: column;
           gap: 10px;
           text-align: center;
@@ -389,7 +394,7 @@ main {
         word-break: normal;
         line-break: strict;
 
-        @media (max-width: 640px) {
+        @media (max-width: $width-sp) {
           text-align: center;
         }
       }
