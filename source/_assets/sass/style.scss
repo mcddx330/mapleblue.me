@@ -119,7 +119,6 @@ main {
 
     @media (max-width: $width-sp) {
       text-align: center;
-      margin-top: 20px;
     }
   }
 
@@ -351,7 +350,8 @@ main {
     justify-content: center;
     gap: 5em;
 
-    @media (max-width: 960px) {
+    @media (max-width: $width-sp) {
+      gap: 0;
       flex-direction: column;
     }
 
@@ -363,10 +363,6 @@ main {
       border: 2px solid #000000;
       box-shadow: 0 0 15px #333333;
       object-fit: cover;
-
-      @media (max-width: $width-sp) {
-        margin-bottom: 20px;
-      }
     }
 
     .profile-text {
@@ -376,15 +372,19 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: row;
 
         @media (max-width: $width-sp) {
-          flex-direction: column;
-          gap: 10px;
           text-align: center;
+          flex-direction: column;
         }
 
         h3 {
           font-size: 1.8rem;
+          @media (max-width: $width-sp) {
+            margin: 0;
+            padding: 0;
+          }
         }
       }
 
