@@ -2,13 +2,13 @@ document.querySelectorAll('.smooth-scroll').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+        const target_id = this.getAttribute('href').substring(1);
+        const element = document.getElementById(target_id);
 
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 400; // Scroll duration in milliseconds
+        const pos_start = window.scrollY;
+        const pos_target = element.getBoundingClientRect().top + window.scrollY;
+        const distance = pos_target - pos_start;
+        const duration = 400; // ms
         let start = null;
 
         function step(timestamp) {
@@ -16,10 +16,8 @@ document.querySelectorAll('.smooth-scroll').forEach(anchor => {
             const progress = timestamp - start;
             const easeInOutCubic = (t) =>
                 t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-            const scrollPosition = easeInOutCubic(Math.min(progress / duration, 1)) * distance + startPosition;
-
-            window.scrollTo(0, scrollPosition);
-
+            const position = easeInOutCubic(Math.min(progress / duration, 1)) * distance + pos_start;
+            window.scrollTo(0, position);
             if (progress < duration) {
                 window.requestAnimationFrame(step);
             }

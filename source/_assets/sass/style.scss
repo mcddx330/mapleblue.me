@@ -9,13 +9,13 @@ body {
 }
 
 header {
-  position: fixed; /* スクロール追尾を有効化 */
+  position: fixed;
   top: 0;
   width: 100%;
   height: 100px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  z-index: 1000; /* 他の要素より上に表示 */
+  z-index: 1000;
 
   .header-inner {
     max-width: 1280px;
@@ -91,7 +91,7 @@ footer {
 
 main {
   max-width: 1280px;
-  margin: 0 auto 0; /* ヘッダーの高さ分の余白を追加 */
+  margin: 0 auto 0;
   padding: 20px;
 
   @media (max-width: 640px) {
@@ -126,31 +126,33 @@ main {
 
   .album-grid {
     display: flex;
-    flex-wrap: wrap; /* アイテムを折り返す */
+    flex-wrap: wrap;
     gap: 20px;
     position: relative;
 
     .album-row {
       width: 100%;
       display: flex;
-      justify-content: flex-start; /* 行内でアイテムを左寄せ */
+      justify-content: flex-start;
       gap: 20px;
       margin-bottom: 20px;
 
       @media (max-width: 640px) {
-        flex-direction: column; /* スマホ時は縦並び */
+        flex-direction: column;
       }
     }
 
     .album {
-      flex: 1 1 calc(33.333% - 20px); /* 横3列を維持 */
-      max-width: calc(33.333% - 20px); /* 最大幅を指定 */
+      /* 横3列 */
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+
       text-align: center;
       position: relative;
-      transition: all 0.3s ease; /* 視覚変化をスムーズにする */
+      transition: all 0.3s ease;
 
       &.active .artwork-cover {
-        filter: brightness(0.5) contrast(0.75); /* 明るさと彩度を調整 */
+        filter: brightness(0.5) contrast(0.75);
         transition: filter 0.3s ease;
       }
 
@@ -177,8 +179,9 @@ main {
     }
 
     @media (max-width: 640px) {
+      /* 1列 */
       .album {
-        flex: 1 1 100%; /* 1列表示に変更 */
+        flex: 1 1 100%;
         max-width: 100%;
       }
     }
@@ -187,23 +190,23 @@ main {
       width: 100% !important;
       display: flex;
       overflow: hidden;
-      gap: 0px;
+      gap: 0;
       background-color: #f8f8f8;
       border: 1px solid #ddd;
       border-radius: 10px;
       padding: 0;
       margin-top: -20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      flex-wrap: nowrap; /* アイテムを横並びに固定 */
-      position: relative; /* 三角印のための基準位置 */
+      flex-wrap: nowrap;
+      position: relative;
 
       .details-text {
         display: flex;
-        flex-direction: column; /* 縦並びに配置 */
-        align-items: center; /* 中央揃え */
-        gap: 1.0em; /* 各要素間のスペース */
-        flex-grow: 1; /* テキストエリアが余白を使えるようにする */
-        max-width: 50%; /* テキストエリアの最大幅 */
+        flex-direction: column;
+        align-items: center;
+        gap: 1.0em;
+        flex-grow: 1;
+        max-width: 50%;
 
         * {
           margin: 0;
@@ -237,8 +240,8 @@ main {
 
           &.columns {
             width: 90%;
-            column-count: 2; /* 2列に分割 */
-            column-gap: 5em; /* 列間のスペース */
+            column-count: 2;
+            column-gap: 5em;
           }
         }
 
@@ -272,22 +275,21 @@ main {
 
       .album-detail {
         display: flex;
-        justify-content: space-between; /* 左右に配置 */
-        align-items: center; /* 縦方向を中央揃え */
-        width: 100%; /* 幅を100%に固定 */
-        gap: 20px; /* 画像と文章の間にスペースを設定 */
+        justify-content: space-between;
+        align-items: center; 
+        width: 100%; 
+        gap: 20px; 
       }
 
-      /* レスポンシブ対応 (例: 640px以下の時) */
       @media (max-width: 640px) {
         .album-detail {
-          flex-direction: column; /* 縦並びに変更 */
+          flex-direction: column; 
           align-items: center;
         }
 
         .details-image,
         .details-text {
-          max-width: 100%; /* 各要素が幅を100%使う */
+          max-width: 100%; 
         }
 
         .details-image {
@@ -349,7 +351,7 @@ main {
     }
 
     img {
-      aspect-ratio: 1 / 1; /* 1:1の比率を維持 */
+      aspect-ratio: 1 / 1; 
       width: 300px;
       height: 300px;
       border-radius: 50%;

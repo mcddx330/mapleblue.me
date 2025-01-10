@@ -8,54 +8,52 @@ function toggleClass(element, className, condition) {
 
 document.querySelectorAll('.album-trigger').forEach(trigger => {
     trigger.addEventListener('click', function () {
-        const chunkId = this.dataset.chunkId;
-        const detailsId = this.dataset.details;
+        const chunk_id = this.dataset.chunkId;
+        const details_id = this.dataset.details;
 
-        const detailChunkElement = document.getElementById(chunkId);
-        const detailsElement = document.getElementById(detailsId);
+        const details_chunks = document.getElementById(chunk_id);
+        const details_elements = document.getElementById(details_id);
 
-        // Remove 'active' from all triggers
+        // activeクラス処理
         document.querySelectorAll('.album').forEach(t => toggleClass(t, 'active', false));
         const parent_album = this.closest('.album');
-
-        // Add 'active' to clicked trigger
         toggleClass(parent_album, 'active', true);
 
-        // Ensure visibility toggle for the same image
-        if (!detailsElement.classList.contains('hidden')) {
-            toggleClass(detailsElement, 'hidden', true);
-            toggleClass(detailChunkElement, 'hidden', true);
+        // 同一albumにおけるdetails表示切り替え
+        if (!details_elements.classList.contains('hidden')) {
+            toggleClass(details_elements, 'hidden', true);
+            toggleClass(details_chunks, 'hidden', true);
             toggleClass(parent_album, 'active', false);
             return;
         }
 
-        // Hide all other chunk details
-        document.querySelectorAll('.album-details').forEach(detailChunk => {
-            if (!detailChunk.classList.contains('hidden') && detailChunk.id !== chunkId) {
-                toggleClass(detailChunk, 'hidden', true);
+        // 存在する他のdetailsが開いていたら全て非表示
+        document.querySelectorAll('.album-details').forEach(detail => {
+            if (!detail.classList.contains('hidden') && detail.id !== chunk_id) {
+                toggleClass(detail, 'hidden', true);
             }
         });
 
-        // Hide all details in the current chunk
-        Array.from(detailChunkElement.getElementsByClassName('album-detail')).forEach((detail) => {
+        // 現在のチャンク内detailsを非表示
+        Array.from(details_chunks.getElementsByClassName('album-detail')).forEach((detail) => {
             toggleClass(detail, 'hidden', true);
         });
 
-        // Show the specific details
-        toggleClass(detailChunkElement, 'hidden', false);
-        toggleClass(detailsElement, 'hidden', false);
+        // details表示
+        toggleClass(details_chunks, 'hidden', false);
+        toggleClass(details_elements, 'hidden', false);
 
-        // Scroll into view only if necessary
-        const detailRect = detailsElement.getBoundingClientRect();
+        // detailsまでスクロール
+        const detail_dom = details_elements.getBoundingClientRect();
         const isVisible = (
-            detailRect.top >= 0 &&
-            detailRect.left >= 0 &&
-            detailRect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            detailRect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            detail_dom.top >= 0
+            && detail_dom.left >= 0
+            && detail_dom.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            && detail_dom.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
 
         if (!isVisible) {
-            detailsElement.scrollIntoView({behavior: 'smooth', block: 'center'});
+            details_elements.scrollIntoView({behavior: 'smooth', block: 'center'});
         }
     });
 });
