@@ -11,8 +11,23 @@ document.querySelectorAll('.album-trigger').forEach(trigger => {
         const chunk_id = this.dataset.chunkId;
         const details_id = this.dataset.details;
 
-        const details_chunks = document.getElementById(chunk_id);
-        const details_elements = document.getElementById(details_id);
+        // display:noneを考慮した現在表示中のコンテナを取得
+        const target_container = Array.from(document.querySelectorAll('.view-pc, .view-sp')).find(container => {
+            return window.getComputedStyle(container).display !== 'none';
+        });
+        if (!target_container) {
+            console.error("No active container (view-pc or view-sp) found.");
+            return;
+        }
+
+        // 現在のチャンクIDを持つdetails_chunksを、アクティブなコンテナ内から取得
+        const details_chunks = target_container.querySelector(`#${chunk_id}`);
+        const details_elements = target_container.querySelector(`#${details_id}`);
+
+        if (!details_chunks || !details_elements) {
+            console.error("Target details_chunks or details_elements not found in active container.");
+            return;
+        }
 
         // activeクラス処理
         document.querySelectorAll('.album').forEach(t => toggleClass(t, 'active', false));
@@ -53,7 +68,7 @@ document.querySelectorAll('.album-trigger').forEach(trigger => {
         );
 
         if (!isVisible) {
-            details_elements.scrollIntoView({behavior: 'smooth', block: 'center'});
+            details_elements.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     });
 });

@@ -18,72 +18,14 @@
     <div id="a-discography"></div>
     <section id="discography" class="height-100vh">
       @php
-        $discos = $page->works->discos->chunk(3);
+        $discos = $page->works->discos;
       @endphp
       <h1>DISCOGRAPHY</h1>
-      <div class="width-100 album-grid">
-        @foreach ($discos as $chunk_id => $chunk)
-          <div class="album-row" style="display: flex; flex-wrap: nowrap;">
-            @foreach ($chunk as $i => $disco)
-              @php
-                $prepath = '/assets/images/works';
-                $image_path = isset($disco['disc_number']) ? sprintf('%s/disc/%s.webp', $prepath, $disco['disc_number']) : null;
-              @endphp
-              <div class="album">
-                <a class="album-trigger" data-chunk-id="album-detail-{{ $chunk_id }}" data-details="details-{{ $i }}">
-                  <span class="artwork-cover"
-                        style="background-image: url('{{ $image_path }}');"
-                  ></span>
-                </a>
-              </div>
-            @endforeach
-          </div>
-
-          <div id="album-detail-{{ $chunk_id }}" class="album-details hidden">
-            @foreach ($chunk as $i => $disco)
-              @php
-                $prepath = '/assets/images/works';
-                $image_path = isset($disco['disc_number'])
-                    ? sprintf('%s/disc/%s.webp', $prepath, $disco['disc_number'])
-                    : null;
-              @endphp
-              <div id="details-{{ $i }}" class="album-detail hidden">
-                <div class="details-image" style="background-image: url('{{ $image_path }}')">
-                </div>
-                <div class="details-text">
-                  <div class="title">
-                    <h2>{{ $disco->title }}</h2>
-                    <p class="fixed date">{{ date('Y/m/d', strtotime($disco->date)) }}</p>
-                  </div>
-
-                  <ol class="
-                    track-list
-                    @if (count($disco->tracks) > 7)
-                      columns
-                    @endif
-                  ">
-                    @foreach($disco->tracks as $title)
-                      <li>{{ $title }}</li>
-                    @endforeach
-                  </ol>
-                  <p class="credits">
-                    Artwork: {{ $disco->artwork }}<br />
-                    Vocal: {{ $disco->vocalists }}
-                  </p>
-                  <div class="links text-center">
-                    Available on: <br />
-                    @if (!empty($disco->links['stores']))
-                      <span><a href="{{ $disco->links->stores }}" target="_blank">Stream / Stores</a></span> |
-                    @endif
-                    @if(!empty($disco->links['bandcamp']))
-                      <span><a href="{{ $disco->links->bandcamp }}" target="_blank">Bandcamp</a></span>
-                    @endif
-                  </div>
-                </div>
-              </div>
-            @endforeach
-          </div>
-        @endforeach
+      <div class="width-100 view-pc album-grid">
+        @include('discography', ['is_pc' => true, 'disco_chunks' => $discos->chunk(3)])
+      </div>
+      <div class="width-100 view-sp album-grid ">
+        @include('discography', ['is_pc' => false, 'disco_chunks' => $discos->chunk(1)])
       </div>
       <p class="fixed text-right"><a href="https://bc.mapleblue.me">&rarr; Older releases on Bandcamp</a></p>
     </section>
