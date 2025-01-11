@@ -1,0 +1,123 @@
+header {
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  nav {
+    ul {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.view-pc {
+  display: none !important;
+}
+
+.view-sp {
+  display: flex !important; // = .album-grid.display
+}
+
+main {
+  text-align: center;
+
+  .fixed {
+    text-align: center;
+  }
+
+  .album {
+    z-index: 999; // .album-detailsより上に浮かす
+  }
+
+  .album-grid {
+    .album-row {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    /* 1列 */
+    .album {
+      flex: 1 1 100% !important;
+      max-width: 100% !important;
+    }
+
+    .album-details {
+      border-radius: 0 0 10px 10px; // 上側の角を直線にする
+      margin-top: -30px;
+      padding-top: 10px;
+
+      .details-text {
+        z-index: 0;
+        padding: 1.0em;
+        max-width: 100%;
+
+        .title {
+          display: inline-block;
+        }
+
+        .track-list {
+          width: 100%;
+
+          &.columns {
+            width: 100%;
+            column-count: 1;
+            column-gap: 0;
+          }
+        }
+      }
+    }
+
+    .album-detail {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .details-image, .details-text {
+      max-width: 100%;
+    }
+
+    .details-image {
+      flex: 0 0 auto;
+      margin-bottom: 20px;
+      width: 100% !important;
+      max-height: 200px;
+    }
+
+    .details-text {
+      text-align: center;
+    }
+  }
+}
+
+#about {
+  .profile {
+    gap: 0;
+    flex-direction: column;
+
+    .profile-text {
+      max-width: 100%;
+
+      div {
+        text-align: center;
+        flex-direction: column;
+      }
+
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -22,10 +22,10 @@
       @endphp
       <h1>DISCOGRAPHY</h1>
       <div class="width-100 view-pc album-grid">
-        @include('discography', ['is_pc' => true, 'disco_chunks' => $discos->chunk(3)])
+        @include('_layouts.discography', ['is_pc' => true, 'disco_chunks' => $discos->chunk(3)])
       </div>
       <div class="width-100 view-sp album-grid ">
-        @include('discography', ['is_pc' => false, 'disco_chunks' => $discos->chunk(1)])
+        @include('_layouts.discography', ['is_pc' => false, 'disco_chunks' => $discos->chunk(1)])
       </div>
       <p class="fixed text-right"><a href="https://bc.mapleblue.me">&rarr; Older releases on Bandcamp</a></p>
     </section>

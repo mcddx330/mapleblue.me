@@ -50,10 +50,10 @@
             <div class="links text-center">
               Available on: <br/>
               @if (!empty($disco->links['stores']))
-                <span><a href="{{ $disco->links->stores }}" target="_blank">Stream / Stores</a></span> |
+                <a href="{{ $disco->links->stores }}" target="_blank">Stream / Stores</a> |
               @endif
               @if(!empty($disco->links['bandcamp']))
-                <span><a href="{{ $disco->links->bandcamp }}" target="_blank">Bandcamp</a></span>
+                <a href="{{ $disco->links->bandcamp }}" target="_blank">Bandcamp</a>
               @endif
             </div>
           </div>

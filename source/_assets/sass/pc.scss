@@ -1,0 +1,18 @@
+.view-pc {
+  display: flex !important;
+}
+
+.view-sp {
+  display: none !important; // = .album-grid.display
+}
+
+main {
+  .album-grid {
+    .album {
+      &.active .artwork-cover {
+        filter: brightness(0.5) contrast(0.75);
+        transition: filter 0.3s ease;
+      }
+    }
+  }
+}
