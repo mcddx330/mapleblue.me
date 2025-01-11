@@ -1,12 +1,10 @@
 <?php
 
-// todo: netlifyアップロードからのvps解約（vps使う必要なくない？限定コンテンツとか今やる？）
-
 return [
-    'production' => false,
-    'baseUrl' => '',
-    'title' => 'mapleblue.me',
-    'description' => 'mapleblue.me',
+    'production' => true,
+    'baseUrl' => 'https://mapleblue.me',
+    'title' => 'MAPLE BLUE RECORDS',
+    'description' => '',
 //    'collections' => [],
 
     'works' => [
