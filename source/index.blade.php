@@ -79,8 +79,7 @@
               現在はVOCALOIDなどの音声合成含むボーカリストを招き、作編曲・作詞からデザインを単独で担当する。<br />
               主な制作環境として、Apple Logic ProとPresonus Studio Oneを使用。
             </p>
-{{--            <p class="fixed text-center"><a href="https://subaco.me/contact?t=mb">お問い合わせはこちらから</a></p>--}}
-            <p class="fixed text-center">お問い合わせ： monobeat.030[at]gmail.com</p>
+            <p class="fixed text-center"><a href="https://subaco.me/contact?t=mb">お問い合わせはこちらから</a></p>
           </div>
         </div>
       </div>
