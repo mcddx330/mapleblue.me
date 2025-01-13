@@ -342,24 +342,91 @@ main {
   text-align: right;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #0056b3;
+  }
+}
+
 .links {
   justify-content: center;
   gap: 10px;
 
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+  }
+
+  footer {
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+    color: #e0e0e0;
+  }
+
   a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
+    color: #e0e0e0 !important;
 
     &:hover {
-      color: #0056b3;
+      color: #80b3ff !important;
+    }
+  }
+
+  .album {
+    .artwork-cover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+
+      &:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+      }
+    }
+
+  }
+
+  .album-grid {
+    .album-details {
+      background-color: #333333 !important;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+
+      .date {
+        color: #FFFFFF !important;
+      }
+
+      .credits {
+        color: #AAAAAA !important;
+      }
+    }
+  }
+
+  #about {
+    .profile {
+      img {
+        border: 2px solid #FFFFFF;
+        box-shadow: 0 0 10px #CCCCCC;
+        object-fit: cover;
+      }
     }
   }
 }
 
+
 @media (min-width: $width-sp) {
   @import "pc.scss";
 }
+
 @media (max-width: $width-sp) {
   @import "sp.scss";
 }
