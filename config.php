@@ -23,7 +23,7 @@ return [
                 'vocalists' => 'Tr.1 かずらなつ / Tr.3 萩原みやこ / Tr.4 eupe',
                 'links' => [
                     'bandcamp' => 'https://bc.mapleblue.me/album/city-motions-ep',
-                    'stores' => 'https://artists.landr.com/800739491984',
+                    'stores' => 'https://artists.landr.com/056870122908',
                 ],
             ],
             [
@@ -44,7 +44,7 @@ return [
                 'vocalists' => 'Tr.2, 6 かずらなつ / Tr.3 れいな / Tr.5 ひなた春花 / Tr.6 りと',
                 'links' => [
                     'bandcamp' => 'https://bc.mapleblue.me/album/the-cinematic-circus',
-                    'stores' => '',
+                    'stores' => 'https://artists.landr.com/056870122939',
                 ],
             ],
             [
@@ -61,8 +61,7 @@ return [
                 'vocalists' => 'Tr.2, 4 かずらなつ / Tr.4 宮舞モカ',
                 'links' => [
                     'bandcamp' => 'https://bc.mapleblue.me/album/rainbow-date-ep',
-                    'stores' => 'https://artists.landr.com/800739749757',
-                    'applemusic' => 'https://music.apple.com/album/1435663109',
+                    'stores' => 'https://artists.landr.com/055905661887',
                 ],
             ],
             [
@@ -108,7 +107,7 @@ return [
                 'vocalists' => 'Tr.2-4, 6-7, 10-12 SUNEO',
                 'links' => [
                     'bandcamp' => 'https://bc.mapleblue.me/album/opus-communication',
-                    'stores' => '',
+                    'stores' => 'https://artists.landr.com/055905661801',
                 ],
             ],
             [
@@ -127,7 +126,7 @@ return [
                 'vocalists' => 'Tr.6 宮舞モカ',
                 'links' => [
                     'bandcamp' => 'https://bc.mapleblue.me/album/2014-remaster',
-                    'stores' => '',
+                    'stores' => 'https://artists.landr.com/055905661788',
                 ],
             ],
         ],
