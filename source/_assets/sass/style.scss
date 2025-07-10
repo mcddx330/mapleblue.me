@@ -100,223 +100,224 @@ main {
   }
 
   #discography {
-    width: 100%;
-    position: relative;
-  }
-
-  .album-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5em;
-    position: relative;
-
-    .album-row {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      gap: calc($album-row-count * 10px);
-      margin-bottom: 20px;
-    }
-
-    .album {
-      /* 横3列 */
-      flex: 1 1 calc(33.333% - 20px);
-      max-width: calc(33.333% - 20px);
-
-      text-align: center;
-      position: relative;
-      transition: all 0.3s ease;
-
-      .artwork-cover {
-        display: block;
-        height: 0;
-        min-width: $width-sp / 4;
-        max-width: $width-sp;
-        padding-top: 100%;
-        border-radius: 8px;
-        background-size: cover;
-        background-position: center;
-        box-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
-
-        &:hover {
-          box-shadow: 0 0 10px rgba(64, 64, 64, 0.8);
-        }
-      }
-
-      p {
-        margin-top: 10px;
-        font-size: 1rem;
-        font-weight: bold;
-      }
-    }
-
-    .album-details {
-      width: 100% !important;
-      display: flex;
-      overflow: hidden;
-      gap: 0;
-      background-color: #f8f8f8;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 0;
-      margin-top: -20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      flex-wrap: nowrap;
-      position: relative;
-
-      .details-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.0em;
-        flex-grow: 1;
-        max-width: 50%;
-
-        * {
-          margin: 0;
-          padding: 0;
-        }
-
-        .title {
-          font-size: medium;
-          text-align: center;
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          gap: 1.5em;
-          margin-bottom: 0.5em;
-        }
-
-        .date {
-          font-size: small;
-          color: #000000;
-        }
-
-        .track-list {
-          width: 50%;
-          list-style: decimal inside;
-
-          li {
-            margin-bottom: 5px;
-            break-inside: avoid; /* 項目が列をまたがないようにする */
-          }
-
-          &.columns {
-            width: 90%;
-            column-count: 2;
-            column-gap: 5em;
-          }
-        }
-
-        .credits {
-          font-size: small;
-          color: #666;
-          text-align: center;
-        }
-      }
-
-      .details-image {
-        flex-shrink: 0; /* 画像サイズが縮小しないようにする */
-        width: 50% !important; /* 画像エリアの最大幅 */
-        max-height: 400px; /* 高さは自動調整 */
-        background-size: 100%; /* 初期サイズを明示的に指定 */
-        background-position: center; /* 中央を基準に配置 */
-        background-repeat: no-repeat; /* 背景画像の繰り返しを無効化 */
-        aspect-ratio: 1 / 1; /* 必要ならアスペクト比を維持 */
-        overflow: hidden; /* 背景画像のクロップを有効化 */
-        transition: background-size 0.25s ease-in-out,
-        background-position 0.25s ease-in-out,
-        filter 0.25s ease-in-out;
-        filter: saturate(0.0);
-      }
-
-      .details-image:hover {
-        background-size: 125%; /* ホバー時に背景画像を拡大 */
-        background-position: center; /* 必要なら位置も変化 */
-        filter: saturate(1.5);
-      }
-
-      .album-detail {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        gap: calc($album-row-count * 10) px;
-      }
-    }
-  }
-}
-
-#works {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  h2 {
-    margin-top: 40px;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-  }
-
-  div {
-    margin-bottom: 20px;
-
-    h5 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-  }
-}
-
-#about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .profile {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5em;
 
-    img {
-      aspect-ratio: 1 / 1;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      border: 2px solid #000000;
-      box-shadow: 0 0 15px #333333;
-      object-fit: cover;
-    }
+    .album-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      position: relative;
 
-    .profile-text {
-      max-width: 50%;
-
-      div {
+      .album-row {
+        width: 100%;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
+        justify-content: flex-start;
+        gap: calc($album-row-count * 10px);
+        margin-bottom: 20px;
+      }
 
-        h3 {
-          font-size: 1.8rem;
+      .album {
+        /* 横3列 */
+        flex: 1 1 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+
+        text-align: center;
+        position: relative;
+        transition: all 0.3s ease;
+
+        .artwork-cover {
+          display: block;
+          height: 0;
+          min-width: $width-sp / 4;
+          max-width: $width-sp;
+          padding-top: 100%;
+          border-radius: 8px;
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
+
+          &:hover {
+            box-shadow: 0 0 10px rgba(64, 64, 64, 0.8);
+          }
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 1rem;
+          font-weight: bold;
         }
       }
 
+      .album-details {
+        width: 100% !important;
+        display: flex;
+        overflow: hidden;
+        gap: 0;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 0;
+        margin-top: -20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex-wrap: nowrap;
+        position: relative;
+
+        .details-text {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.0em;
+          flex-grow: 1;
+          max-width: 50%;
+
+          * {
+            margin: 0;
+            padding: 0;
+          }
+
+          .title {
+            font-size: medium;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1.5em;
+            margin-bottom: 0.5em;
+          }
+
+          .date {
+            font-size: small;
+            color: #000000;
+          }
+
+          .track-list {
+            width: 50%;
+            list-style: decimal inside;
+
+            li {
+              margin-bottom: 5px;
+              break-inside: avoid; /* 項目が列をまたがないようにする */
+            }
+
+            &.columns {
+              width: 90%;
+              column-count: 2;
+              column-gap: 5em;
+            }
+          }
+
+          .credits {
+            font-size: small;
+            color: #666;
+            text-align: center;
+          }
+        }
+
+        .details-image {
+          flex-shrink: 0; /* 画像サイズが縮小しないようにする */
+          width: 50% !important; /* 画像エリアの最大幅 */
+          max-height: 400px; /* 高さは自動調整 */
+          background-size: 100%; /* 初期サイズを明示的に指定 */
+          background-position: center; /* 中央を基準に配置 */
+          background-repeat: no-repeat; /* 背景画像の繰り返しを無効化 */
+          aspect-ratio: 1 / 1; /* 必要ならアスペクト比を維持 */
+          overflow: hidden; /* 背景画像のクロップを有効化 */
+          transition: background-size 0.25s ease-in-out,
+          background-position 0.25s ease-in-out,
+          filter 0.25s ease-in-out;
+          filter: saturate(0.0);
+        }
+
+        .details-image:hover {
+          background-size: 125%; /* ホバー時に背景画像を拡大 */
+          background-position: center; /* 必要なら位置も変化 */
+          filter: saturate(1.5);
+        }
+
+        .album-detail {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          gap: calc($album-row-count * 10) px;
+        }
+      }
+    }
+  }
+
+  #works {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    div {
+      margin-bottom: 20px;
+
+      h5 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
       p {
-        margin-top: 10px;
-        line-height: 1.5;
-        word-break: break-word;
-        line-break: strict;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  #about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5em;
+
+      img {
+        aspect-ratio: 1 / 1;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 2px solid #000000;
+        box-shadow: 0 0 15px #333333;
+        object-fit: cover;
+      }
+
+      .profile-text {
+        max-width: 50%;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+
+          h3 {
+            font-size: 1.8rem;
+          }
+        }
+
+        p {
+          margin-top: 10px;
+          line-height: 1.5;
+          word-break: break-word;
+          line-break: strict;
+        }
       }
     }
   }

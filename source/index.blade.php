@@ -20,14 +20,16 @@
       @php
         $discos = $page->works->discos;
       @endphp
-      <h1>DISCOGRAPHY</h1>
-      <div class="width-100 view-pc album-grid">
-        @include('_layouts.discography', ['is_pc' => true, 'disco_chunks' => $discos->chunk(3)])
+      <div class="width-100">
+        <h1>DISCOGRAPHY</h1>
+        <div class="view-pc album-grid">
+          @include('_layouts.discography', ['is_pc' => true, 'disco_chunks' => $discos->chunk(3)])
+        </div>
+        <div class="width-100 view-sp album-grid ">
+          @include('_layouts.discography', ['is_pc' => false, 'disco_chunks' => $discos->chunk(1)])
+        </div>
+        <p class="fixed text-right"><a href="https://bc.mapleblue.me">&rarr; Older releases on Bandcamp</a></p>
       </div>
-      <div class="width-100 view-sp album-grid ">
-        @include('_layouts.discography', ['is_pc' => false, 'disco_chunks' => $discos->chunk(1)])
-      </div>
-      <p class="fixed text-right"><a href="https://bc.mapleblue.me">&rarr; Older releases on Bandcamp</a></p>
     </section>
 
     <div id="a-works" class="padding-header"></div>
@@ -74,9 +76,9 @@
               <span class="fixed"><a href="https://subaco.me" target="_blank">→ MORE INFO</a></span>
             </div>
             <p>
-              幼い頃からピアノに親しみ、2007年から楽曲制作を始める。<br />
-              2010年に個人サークル（旧名：STUDiO MONOBEAT）を立ち上げ、初期はインストゥルメンタルの楽曲を中心に活動を行う。<br />
-              現在はVOCALOIDなどの音声合成含むボーカリストを招き、作編曲・作詞からデザインを単独で担当する。<br />
+              幼い頃からピアノに親しみ、2007年から楽曲制作を始める。<br/>
+              2010年に個人サークル（旧名：STUDiO MONOBEAT）を立ち上げ、初期はインストゥルメンタルの楽曲を中心に活動を行う。<br/>
+              現在はVOCALOIDなどの音声合成含むボーカリストを招き、作編曲・作詞からデザインを単独で担当する。<br/>
               主な制作環境として、Apple Logic ProとPresonus Studio Oneを使用。
             </p>
             <p class="fixed text-center"><a href="https://subaco.me/contact?t=mbr" target="_blank">お問い合わせはこちらから</a></p>
