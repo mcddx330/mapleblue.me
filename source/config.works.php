@@ -126,6 +126,13 @@ $discos = [
 
 $activities = [
     [
+        'date'   => 20260114,
+        'title'  => 'XXさんは異常者',
+        'artist' => '',
+        'desc'   => 'BGM、SE担当',
+        'url'    => 'https://unityroom.com/games/xxisanexxcentricgirl',
+    ],
+    [
         'date'   => 20200301,
         'title'  => '銀河ハイウェイシンドローム',
         'artist' => 'sola',
