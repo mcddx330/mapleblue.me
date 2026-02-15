@@ -1,3 +1,19 @@
+header {
+  .header-inner {
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-align: left;
+  }
+
+  nav {
+    ul {
+      justify-content: flex-end;
+    }
+  }
+}
+
 .view-pc {
   display: flex !important;
 }
@@ -7,6 +23,52 @@
 }
 
 main {
+  .album-grid {
+    .album-row {
+      justify-content: flex-start;
+      gap: calc($album-row-count * 10px);
+      margin-bottom: 20px;
+    }
+
+    .album {
+      /* 横3列 */
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+    }
+
+    .album-details {
+      .details-text {
+        max-width: 50%;
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          gap: 1.5em;
+        }
+
+        .track-list {
+          width: 50%;
+
+          &.columns {
+            width: 90%;
+            column-count: 2;
+            column-gap: 5em;
+          }
+        }
+      }
+
+      .details-image {
+        width: 50% !important; /* 画像エリアの最大幅 */
+        max-height: 400px; /* 高さは自動調整 */
+      }
+
+      .album-detail {
+        gap: calc($album-row-count * 10) px;
+      }
+    }
+  }
+
   .album-grid {
     .album {
       &.active .artwork-cover {
@@ -21,3 +83,21 @@ main {
   }
 }
 
+main {
+  #about {
+    .profile {
+      flex-direction: row;
+      gap: 5em;
+
+      .profile-text {
+        max-width: 50%;
+
+        div {
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}

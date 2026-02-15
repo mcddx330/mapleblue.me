@@ -16,7 +16,7 @@
 
   <main>
     <div id="a-discography"></div>
-    <section id="discography" class="height-100vh">
+    <section id="discography">
       @php
         $discos = $page->works->discos;
       @endphp
@@ -33,7 +33,7 @@
     </section>
 
     <div id="a-works" class="padding-header"></div>
-    <section id="works" class="height-100vh">
+    <section id="works">
       <div class="width-100">
         <h1>WORKS</h1>
         @php
@@ -59,7 +59,7 @@
     </section>
 
     <div id="a-about"></div>
-    <section id="about" class="height-100vh">
+    <section id="about">
       <div class="width-100">
         <h1>ABOUT</h1>
         <div class="profile">
@@ -71,7 +71,7 @@
             </p>
           </div>
           <div class="profile-text">
-            <div>
+            <div class="name"">
               <h3>秋本すばこ</h3>
               <span class="fixed"><a href="https://subaco.me" target="_blank">→ MORE INFO</a></span>
             </div>

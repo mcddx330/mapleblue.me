@@ -28,7 +28,6 @@ header {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 calc($album-row-count * 10) px;
   }
 
@@ -46,7 +45,6 @@ header {
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: left;
   }
 
   nav {
@@ -56,7 +54,6 @@ header {
       padding: 0;
       display: flex;
       gap: 20px;
-      justify-content: flex-end;
     }
   }
 }
@@ -81,7 +78,11 @@ footer {
 main {
   max-width: $width-pc;
   margin: 0 auto 0;
-  padding: 20px;
+  padding: 1em;
+
+  section {
+    min-height: 100vh;
+  }
 
   .fixed {
     position: relative;
@@ -113,16 +114,9 @@ main {
       .album-row {
         width: 100%;
         display: flex;
-        justify-content: flex-start;
-        gap: calc($album-row-count * 10px);
-        margin-bottom: 20px;
       }
 
       .album {
-        /* 横3列 */
-        flex: 1 1 calc(33.333% - 20px);
-        max-width: calc(33.333% - 20px);
-
         text-align: center;
         position: relative;
         transition: all 0.3s ease;
@@ -170,7 +164,6 @@ main {
           align-items: center;
           gap: 1.0em;
           flex-grow: 1;
-          max-width: 50%;
 
           * {
             margin: 0;
@@ -180,10 +173,6 @@ main {
           .title {
             font-size: medium;
             text-align: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 1.5em;
             margin-bottom: 0.5em;
           }
 
@@ -193,18 +182,11 @@ main {
           }
 
           .track-list {
-            width: 50%;
             list-style: decimal inside;
 
             li {
               margin-bottom: 5px;
               break-inside: avoid; /* 項目が列をまたがないようにする */
-            }
-
-            &.columns {
-              width: 90%;
-              column-count: 2;
-              column-gap: 5em;
             }
           }
 
@@ -217,8 +199,6 @@ main {
 
         .details-image {
           flex-shrink: 0; /* 画像サイズが縮小しないようにする */
-          width: 50% !important; /* 画像エリアの最大幅 */
-          max-height: 400px; /* 高さは自動調整 */
           background-size: 100%; /* 初期サイズを明示的に指定 */
           background-position: center; /* 中央を基準に配置 */
           background-repeat: no-repeat; /* 背景画像の繰り返しを無効化 */
@@ -241,7 +221,6 @@ main {
           justify-content: space-between;
           align-items: center;
           width: 100%;
-          gap: calc($album-row-count * 10) px;
         }
       }
     }
@@ -283,10 +262,8 @@ main {
 
     .profile {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 5em;
 
       img {
         aspect-ratio: 1 / 1;
@@ -299,13 +276,8 @@ main {
       }
 
       .profile-text {
-        max-width: 50%;
-
         div {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-direction: row;
 
           h3 {
             font-size: 1.8rem;
@@ -325,10 +297,6 @@ main {
 
 .width-100 {
   width: 100%;
-}
-
-.height-100vh {
-  min-height: 100vh;
 }
 
 .hidden {
@@ -418,6 +386,11 @@ a {
         border: 2px solid #FFFFFF;
         box-shadow: 0 0 10px #CCCCCC;
         object-fit: cover;
+      }
+    }
+    .profile-text {
+      .name {
+        margin: 1.0em;
       }
     }
   }

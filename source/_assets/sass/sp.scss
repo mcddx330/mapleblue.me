@@ -101,6 +101,7 @@ main {
   .profile {
     gap: 0;
     flex-direction: column;
+    display: inline-block;
 
     .profile-text {
       max-width: 100%;
