@@ -37,7 +37,12 @@ header {
     font-weight: bold;
     transition: color 0.3s;
 
-    &:hover {
+    &:hover,
+    &:active {
+      color: #007BFF;
+    }
+
+    &.active {
       color: #007BFF;
     }
   }
@@ -348,7 +353,12 @@ a {
   a {
     color: #e0e0e0 !important;
 
-    &:hover {
+    &:hover,
+    &:active {
+      color: #80b3ff !important;
+    }
+
+    &.active {
       color: #80b3ff !important;
     }
   }
